@@ -1,0 +1,9 @@
+<div class="container">
+  <h3>{{book1?.title}}</h3>
+  <p *ngFor="let author of book1?.autors">{{author}}</p>
+  <p *ngIf="book1?.description">{{book1?.description}}</p>
+  <p>{{book1?.year}}</p>
+  <div *ngIf="book1?.analogue">
+    <p *ngFor="let i of book1?.analogue">{{i}}</p>
+  </div>
+</div>
