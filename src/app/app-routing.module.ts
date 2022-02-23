@@ -5,6 +5,7 @@ import { BooksSpecificationComponent } from './components/books-specification/bo
 import { BooksComponent } from './components/books/books.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { StartComponent } from './components/start/start.component';
+import { GuardBookService } from './services/guardBook.service';
 import { ResolveBookService } from './services/resolveBook.service';
 
 const routes: Routes = [
@@ -15,13 +16,14 @@ const routes: Routes = [
   {
     path:'books',
     component: BooksComponent,
+    canActivateChild:[GuardBookService],
     children:[
       {
         path: ':id',
         component: BooksSpecificationComponent,
-        // resolve:{
-        //   book: ResolveBookService
-        // }
+        resolve:{
+          book: ResolveBookService
+        }
       }
     ]
   },

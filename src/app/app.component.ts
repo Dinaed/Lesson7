@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FullYearService } from './services/fullYear.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Lesson7';
+  constructor(public isFullYear:FullYearService){ }
+  
 }
